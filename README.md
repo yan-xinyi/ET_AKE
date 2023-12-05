@@ -34,11 +34,12 @@
 
 ## 数据描述
 ### 1、眼动阅读语料
->>本研究语料来自期刊《情报学报》、《情报科学》和《数据分析与知识发现》2000年至2022年间发布的学术文本摘要各110篇（共330篇）。在这些文本中，将10篇《情报学报》论文用于预实验，其余320篇用于正式眼动实验。正式阅读语料包括1215个完整句（含标题），总计64969个字符。此外，构建了Abstract320数据集，用于研究阅读眼动数据对关键词抽取任务的影响。
-
-<div align=central>
+本研究语料来自期刊《情报学报》、《情报科学》和《数据分析与知识发现》2000年至2022年间发布的学术文本摘要各110篇（共330篇）。在这些文本中，将10篇《情报学报》论文用于预实验，其余320篇用于正式眼动实验。正式阅读语料包括1215个完整句（含标题），总计64969个字符。此外，构建了Abstract320数据集，用于研究阅读眼动数据对关键词抽取任务的影响。
+### 2、关键词抽取语料
+我们从与眼动语料相同来源的期刊筛选出不包含英文字符、摘要字符数大于50的学术论文，剔除掉原眼动语料的320篇后构建了关键词抽取数据集Abstract5190，共包括5190篇。数据集具体信息参见表1。
+<div align=middle>
 <b>Table 1. List of domains and journals/database of datasets</b><br>
-  <img src="https://yan-xinyi.github.io/figures/SSB_KPE_1.png" width="75%" alt="Table 1. List of domains and journals/database of datasets"><br>
+  <img src="https://yan-xinyi.github.io/figures/SSB_KPE_1.png" width="75%" alt="表1 关键词抽取测试数据集概况"><br>
   <b>Note.</b> 1: https://www.ncbi.nlm.nih.gov/pmc/<br><br>
 </div>
 
