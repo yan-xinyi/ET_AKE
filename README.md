@@ -38,7 +38,7 @@
 ### 2、关键词抽取语料
 我们从与眼动语料相同来源的期刊筛选出不包含英文字符、摘要字符数大于50的学术论文，剔除掉原眼动语料的320篇后构建了关键词抽取数据集Abstract5190，共包括5190篇。数据集具体信息参见表1。
 <div align=middle>
-<b>Table 1. List of domains and journals/database of datasets</b><br>
+<b>表1 关键词抽取测试数据集概况</b><br>
   <img src="https://yan-xinyi.github.io/figures/SSB_KPE_1.png" width="75%" alt="表1 关键词抽取测试数据集概况"><br>
   <b>Note.</b> 1: https://www.ncbi.nlm.nih.gov/pmc/<br><br>
 </div>
