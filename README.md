@@ -39,19 +39,9 @@
 我们从与眼动语料相同来源的期刊筛选出不包含英文字符、摘要字符数大于50的学术论文，剔除掉原眼动语料的320篇后构建了关键词抽取数据集Abstract5190，共包括5190篇。数据集具体信息参见表1。
 <div align=middle>
 <b>表1 关键词抽取测试数据集概况</b><br>
-  <img src="https://yan-xinyi.github.io/figures/SSB_KPE_1.png" width="75%" alt="表1 关键词抽取测试数据集概况"><br>
-  <b>Note.</b> 1: https://www.ncbi.nlm.nih.gov/pmc/<br><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="表1 关键词抽取测试数据集概况"><br>
+  <b>注：</b> 总字符数包含中文字符和标点符号；关键字符为出现过在关键词部分的字符。<br><br>
 </div>
-
-
-
-Upon investigating the existing open-source datasets, it was observed that the HTML texts of each article within the PubMed dataset could be obtained directly from the PubMed website. In order to mitigate the issues of uniformity of section structures within a single domain, this study also selected academic articles from the fields of library and information science (LIS) and computer science (CS) as corpora for KPE. Following the completion of the data collection process, the academic articles with missing author's keyphrases are removed firstly. Subsequently, the HTML tags pertaining to paragraphs and headings within the articles were retained, while all other tags were removed. The details of the dataset are shown in Table 2. 
-
-<div align=left>
-<b>Table 2. Number of samples and author's keyphrases of training and test sets in different corpora.</b>
-<img src="https://yan-xinyi.github.io/figures/SSB_KPE_2.png" width="75%" alt="Table 2. Number of samples and author's keyphrases of training and test sets in different corpora."><br>
-</div>
-
 
 ## Requirements
 System environment is set up according to the following configuration:
