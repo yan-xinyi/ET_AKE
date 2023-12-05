@@ -1,5 +1,5 @@
 # 基于低成本眼动追踪数据的关键词抽取研究 
-  随着认知信号采集与分析技术的发展，眼动追踪语料已经在自然语言处理（NLP）等领域得到应用。但是由于高昂的采集与预处理成本，眼动语料构建以及下游NLP任务的测评研究收到很大程度的限制。关键词抽取是组织检索学术文本重要的技术，传统方法由于文档内部信息的有限性而很难得到提升。为了解决上述问题，本研究提出一种低成本的眼动数据采集方法。通过在阅读标注平台嵌入SearchGazer眼球追踪脚本，实现基于网络摄像头的低成本、多人同步的数据采集。基于构建的中文学术论文的眼动追踪数据集，我们将首次注视时间（FFD）、注视次数（FN）和总注视时间（TFD）这三种眼动特征在关键词抽取模型上进行测评。结果表面，每种眼动特征对关键词抽取任务均有一定提升效果，其中FFD的提升效果最为显著。组合的眼动特征对关键词抽取任务有进一步的提升效果，FFD与TFD的组合提升效果最佳。
+随着认知信号采集与分析技术的发展，眼动追踪语料已经在自然语言处理（NLP）等领域得到应用。但是由于高昂的采集与预处理成本，眼动语料构建以及下游NLP任务的测评研究收到很大程度的限制。关键词抽取是组织检索学术文本重要的技术，传统方法由于文档内部信息的有限性而很难得到提升。为了解决上述问题，本研究提出一种低成本的眼动数据采集方法。通过在阅读标注平台嵌入SearchGazer眼球追踪脚本，实现基于网络摄像头的低成本、多人同步的数据采集。基于构建的中文学术论文的眼动追踪数据集，我们将首次注视时间（FFD）、注视次数（FN）和总注视时间（TFD）这三种眼动特征在关键词抽取模型上进行测评。结果表面，每种眼动特征对关键词抽取任务均有一定提升效果，其中FFD的提升效果最为显著。组合的眼动特征对关键词抽取任务有进一步的提升效果，FFD与TFD的组合提升效果最佳。
 
 ## 项目概述
 <b>这是 "基于低成本眼动追踪数据的关键词抽取研究"一文的源代码与关键词抽取数据来源。</b>
@@ -7,61 +7,36 @@
   近30多年来，阅读过程中的人类眼球运动被广泛视作注意力聚焦和进一步认知处理的反映(Ma et al., 2022)，已被广泛运用于心理学、语言学以及计算机领域的研究（添加相关文献）。目前，已有不少研究将眼动追踪数据集用于文本压缩、词性标注、情感识别、命名实体识别、关键词抽取等NLP任务中(Barrett et al., 2016; Hollenstein et al., 2019; Mishra et al., 2016; Zhang & Zhang, 2021)，并证实了眼动数据对这些任务的提升效果。
   本研究提出一种高效低成本的眼动数据采集方法，将SearchGazer脚本(Papoutsaki et al., 2017)嵌入部署在服务器的阅读平台中，以同时获取多名被试者的眼动数据。此外如何将眼动特征指标合适的运用到关键词抽取模型中是一个很重要的问题。Zhang等提出将眼动特征使用到神经网络模型中的两种方法，一种是在有注意力机制的神经网络模型中将眼动特征作为注意力输出的真值；另一种是将眼动特征作为模型的外部特征(Zhang & Zhang, 2021)。本研究在此基础上增加预训练语言模型，因为预训练语言模型在NLP领域更具有优势。
 总的来说，本文的贡献包括以下三个方面：
-首先，本研究提出了一种低成本高效率的眼动数据采集方法，通过将SearchGazer脚本嵌入阅读平台，实现了低成本的眼动数据采集。
-其次，本研究基于三项眼动特征指标：FFD、FN及TFD，构建了字级的中文学术文本眼动数据集。
-然后，我们将上述三种眼动特征及其组合应用于学术文本关键词抽取任务。结果表面，FFD对抽取模型的性能提升最为明显和稳定。且FFD与FN的眼动特征组合对模型性能提升的平均效果最好，但在不同的模型中存在较大的差异性。
+* 首先，本研究提出了一种低成本高效率的眼动数据采集方法，通过将SearchGazer脚本嵌入阅读平台，实现了低成本的眼动数据采集。
+* 其次，本研究基于三项眼动特征指标：FFD、FN及TFD，构建了字级的中文学术文本眼动数据集。
+* 然后，我们将上述三种眼动特征及其组合应用于学术文本关键词抽取任务。结果表面，FFD对抽取模型的性能提升最为明显和稳定。且FFD与FN的眼动特征组合对模型性能提升的平均效果最好，但在不同的模型中存在较大的差异性。
 
-## Directory Structure
-<pre>SSB_AKE                                      # Root directory
-├─ Dataset                                   # <b>Experimental datasets</b>
-│    ├── IEEE-2000                           # dataset consists of 1316 articles from Pub-Med
-│    │    ├── test
-│    │    └── train
-│    ├── LIS-2000                            # dataset consists of 2000 articles from Library and information science domain
-│    │    ├── test           
-│    │    └── train
-│    └── PMC-1316                            # dataset consists of 2000 articles from Computer science domain
-│        ├── test           
-│        └── train
-├─ CRF++                                     # a toolkit for conditional random fields (CRFs)
-│    ├── README.MD                           # read this file to get into CRF++
-│    ├── crf_learn.exe
-│    ├── crf_text.exe
-│    ├── exec.sh
-│    └── libcrfpp.dll
-└─ Codes
-     ├─DL                                    # <b>Deep learning models</b>
-     │  │  bertbilstmcrf.py                  # BERT-BiLSTM-CRF model implementation module
-     │  │  bilstmcrf.py                      # BiLSTM-CRF model implementation module
-     │  │  config.py                         # Config file
-     │  │  obtain_results.py                 # Prediction results acquisition module
-     │  │  preprocessing.py                  # Data preprocessing module
-     │  │  split_dataset.py                  # Training and validation set segmentation module
-     │  │  utils.py                          # library of auxiliary functions
-     │  ├─inputs                             # Folders for intermediate data
-     │  └─outputs                            # The folder where the output data is stored
-     └─ML                                    # <b>Traditional machine learning models</b>
-        │  calculate_tf_tr_features.py       # tf*idf and textrank feature calculation module
-        │  config.py                         # Config file
-        │  crf.py                            # CRF Model Implementation Module
-        │  crf_preprocessing.py              # CRF model data preprocessing module
-        │  obtain_results.py                 # Prediction results acquisition module
-        │  svm.py                            # SVM algorithm implementation module 
-        │  svm_preprocessing.py              # SVM algorithm data preprocessing module
-        │  textrank.py                       # Textrank algorithm implementation module
-        │  tf_idf.py                         # Tf*idf algorithm implementation module
-        │  training_glove.py                 # Glove word vector training module   
-        │  utils.py                          # Library of auxiliary functions
-        ├─inputs                             # Folders for intermediate data
-        └─outputs                            # Folder where the output data is stored
-
-
+## 项目文件结构
+<pre>ET_AKE                                       # 根目录
+├─ Data                                      # <b>数据文件夹</b>
+│    ├── Abstract320                         # 眼动阅读语料
+│    │    └── test
+│    └── Abstract5190                        # 关键词抽取语料
+│         ├── test           
+│         └── train
+├─ Result                                    # <b>结果存放文件夹</b>
+├── main.py                                  # <b>主函数模块</b>
+├── bilstm.py                                # BiLSTM模型实现模块
+├── bilstmcrf.py                             # BiLSTM+CRF模型实现模块
+├── attbilstm.py                             # 基于注意力机制的BiLSTM模型实现模块
+├── attbilstm_crf.py                         # 基于注意力机制的BiLSTM+CRF模型实现模块
+├── BERT.py                                  # BERT模型实现模块
+├── macBERT.py                               # macBERT模型实现模块
+├── RoBERTa.py                               # RoBERTa模型实现模块
+├── config.py                                # 参数配置模块
+└── evaluate.py                              # 评估模块
 </pre>
 
-## Dataset Discription
-This paper utilized section structure information from academic articles to enhance KPE performance. Upon conducting a data investigation, it was observed that commonly used KPE datasets consist of academic articles presented as plain text, lacking differentiation between sections and paragraphs. To overcome this issue, there is a need to construct new datasets and segment the data based on the clear demarcation of sections within the articles.
+## 数据描述
+### 1、眼动阅读语料
+>>本研究语料来自期刊《情报学报》、《情报科学》和《数据分析与知识发现》2000年至2022年间发布的学术文本摘要各110篇（共330篇）。在这些文本中，将10篇《情报学报》论文用于预实验，其余320篇用于正式眼动实验。正式阅读语料包括1215个完整句（含标题），总计64969个字符。此外，构建了Abstract320数据集，用于研究阅读眼动数据对关键词抽取任务的影响。
 
-<div align=left>
+<div align=central>
 <b>Table 1. List of domains and journals/database of datasets</b><br>
   <img src="https://yan-xinyi.github.io/figures/SSB_KPE_1.png" width="75%" alt="Table 1. List of domains and journals/database of datasets"><br>
   <b>Note.</b> 1: https://www.ncbi.nlm.nih.gov/pmc/<br><br>
