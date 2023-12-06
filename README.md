@@ -43,39 +43,28 @@
   <b>注：</b> 总字符数包含中文字符和标点符号；关键字符为出现过在关键词部分的字符。<br><br>
 </div>
 
-## Requirements
-System environment is set up according to the following configuration:
-- Python==3.7
-- Torch==1.8.0
+## 参数环境
+本研究将使用Abstract320和Abstract5190数据集作为测试集。因为摘要文本的最大长度约为500字，所以我们将max_length设置为 512。对样本较少的Abstract320进行五折交叉验证，以减少随机性偏差。Abstract5190数据集则以4:1的比例将其分为训练集和测试集。由于两个数据集的大小不同，因此针对不同模型两个数据集达到拟合所需的学习率和训练轮次也不同。针对样本较小的Abstract320数据集，在BiLSTM和BiLSTM+CRF模型中的训练轮次为30、学习率为0.01；而在基于注意力机制的模型中训练轮次为65、学习率为0.005。Abstract5190数据集在上述四种模型中的训练轮次都为30、学习率为0.003。在三个预训练语言模型中，Abstract320数据集与Abstract5190数据集的训练轮次分别为10和8，学习率都为5e-5。代码环境按照如下版本配置：
+- Python==3.8
+- Torch==2.0.1+cu118
 - torchvision==0.9.0
 - Sklearn==0.0
 - Numpy 1.25.1+mkl
-- nltk==3.6.2
-- Tqdm==4.56.0
+- nltk==3.6.1
+- Tqdm==4.59.0
 
-## Quick Start
-In this paper, two classes of keyword extraction methods are selected to explore the role of chapter structure information on keyword extraction. One class is unsupervised keyword extraction methods based on TF*IDF and TextRank, and the other class is supervised key extraction methods based on Support Vector Machines, Conditional Random Fields, BiLSTM-CRF and BERT-BiLSTM-CRF.
-### Implementation Steps for machine learing model
-1. <b>Processing:</b> Run the processing.py file to process the data into json format:
-    `python processing.py`
+## 快速开始指南
+为了更好的探究数据集中字级眼动特征运用于关键词抽取任务的有效性，本研究通过多种关键词抽取模型对眼动特征进行了测试。关键词抽取模型分为基于循环神经网络的提取模型和基于预训练语言模型的提取模型两类。
+### 深度学习模型运行指南
+1. <b>参数配置：</b> 在 `config.py` 文件中配置超参数。大致有以下参数需要设置：
+    - `train_path`,`test_path`,`vocab_path`,`save_path`: 训练数据、测试数据、词汇数据和结果的路径。
+    - `fs_name`, `fs_num`: 认知特征的名称和数量。
+    - `epochs`: 指整个训练数据集在训练过程中通过模型的次数。 
+    - `lr`: 学习率。
+    - `vocab_size`: 词汇量。
+    - `embed_dim`,`hidden_dim`: 嵌入层和隐藏层的维度。
+    - `batch_size`: 是指在机器学习模型的训练或推理过程中，一次正向/反向传递中一起处理的示例（或样本）的数量。
+    - `max_length`: 用于指定文本输入序列所允许的最大长度（标记数），常用于自然语言处理任务，如文本生成或文本分类。
+2. <b>构建关键词抽取模型：</b> 运行main.py文件，选择要调用的模型并开始训练。
 
-   The data is preprocessed to the format like: {['word','Value_et1',... ,'Value_et17','Value_eeg1',... ,'Value_eeg8','tag']}
-
-2. <b>Configuration:</b> Configure hyperparameters in the `config.py` file. There are roughly the following parameters to set:
-    - `modeltype`: select which model to use for training and testing.
-    - `train_path`,`test_path`,`vocab_path`,`save_path`: path of train data, test data, vocab data and results.
-    - `fs_name`, `fs_num`: Name and number of cognitive traits.
-    - `run_times`: Number of repetitions of training and testing.
-    - `epochs`: refers to the number of times the entire training dataset is passed through the model during the training process. 
-    - `lr`: learning rate.
-    - `vocab_size`: the size of vocabulary. 37347 for Election-Trec Dataset, 85535 for General-Twitter.
-    - `embed_dim`,`hidden_dim`: dim of embedding layer and hidden layer.
-    - `batch_size`: refers to the number of examples (or samples) that are processed together in a single forward/backward pass during the training or inference process of a machine learning model.
-    - `max_length`: is a parameter that specifies the maximum length (number of tokens) allowed for a sequence of text input. It is often used in natural language processing tasks, such as text generation or text classification.
-3. <b>Modeling:</b> Modifying combinations of additive cognitive features in the model.
-
-   For example, the code below means add all 25 features into the model:
-
-         `input = torch.cat([input, inputs['et'], inputs['eeg']], dim=-1)`
-5. <b>Training and testing:</b> based on your system, open the terminal in the root directory 'AKE' and type this command:
-    `python main.py` 
+3. <b>配置加入的眼动特征组合：</b> 
