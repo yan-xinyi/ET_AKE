@@ -1,18 +1,18 @@
-# Rresearch on keyword extraction with low-cost eye-tracking data acquisition technology
+# Rresearch on keyphrase extraction with low-cost eye-tracking data acquisition technology
 
 ## Overview
-<b>This is data and source Code for the paper "Rresearch on keyword extraction with low-cost eye-tracking data acquisition technology".</b>
+<b>This is data and source Code for the paper "Rresearch on keyphrase extraction with low-cost eye-tracking data acquisition technology".</b>
 
-  Over the past three decades, human ocular movements during the process of reading have been widely regarded as reflections of attentional focus and further cognitive processing (Ma et al., 2022). This phenomenon has found extensive applications in the realms of psychology, linguistics, and computer science, as evidenced by numerous studies (cite relevant literature). Presently, a considerable body of research has employed eye-tracking datasets in various natural language processing (NLP) tasks, including text compression, part-of-speech tagging, sentiment analysis, named entity recognition, and keyword extraction (Barrett et al., 2016; Hollenstein et al., 2019; Mishra et al., 2016; Zhang & Zhang, 2021). These studies affirm the enhancing effects of eye-tracking data on the aforementioned tasks.
+  Over the past three decades, human ocular movements during the process of reading have been widely regarded as reflections of attentional focus and further cognitive processing (Ma et al., 2022). This phenomenon has found extensive applications in the realms of psychology, linguistics, and computer science, as evidenced by numerous studies (cite relevant literature). Presently, a considerable body of research has employed eye-tracking datasets in various natural language processing (NLP) tasks, including text compression, part-of-speech tagging, sentiment analysis, named entity recognition, and keyphrase extraction (Barrett et al., 2016; Hollenstein et al., 2019; Mishra et al., 2016; Zhang & Zhang, 2021). These studies affirm the enhancing effects of eye-tracking data on the aforementioned tasks.
 
-In this study, we propose an efficient and cost-effective method for collecting eye-tracking data. The SearchGazer script (Papoutsaki et al., 2017) is integrated into a reading platform deployed on a server, allowing simultaneous acquisition of eye-tracking data from multiple participants. Additionally, the judicious application of eye-tracking feature indicators to keyword extraction models poses a crucial question. Zhang et al. proposed two methods for incorporating eye-tracking features into neural network models: one involves treating eye-tracking features as the ground truth for attention output in neural network models with attention mechanisms, and the other entails treating eye-tracking features as external features of the model (Zhang & Zhang, 2021). Building upon this foundation, our study introduces pre-trained language models, leveraging the advantages they hold in the NLP domain.
+In this study, we propose an efficient and cost-effective method for collecting eye-tracking data. The SearchGazer script (Papoutsaki et al., 2017) is integrated into a reading platform deployed on a server, allowing simultaneous acquisition of eye-tracking data from multiple participants. Additionally, the judicious application of eye-tracking feature indicators to keyphrase extraction models poses a crucial question. Zhang et al. proposed two methods for incorporating eye-tracking features into neural network models: one involves treating eye-tracking features as the ground truth for attention output in neural network models with attention mechanisms, and the other entails treating eye-tracking features as external features of the model (Zhang & Zhang, 2021). Building upon this foundation, our study introduces pre-trained language models, leveraging the advantages they hold in the NLP domain.
 In summary, this paper contributes in three main aspects:
 
 * Firstly, our research introduces a cost-effective and efficient method for eye-tracking data collection. By embedding the SearchGazer script into the reading platform, we achieve low-cost acquisition of eye-tracking data.
 
 * Secondly, based on three eye-tracking feature indicators—First Fixation Duration (FFD), Fixation Count (FN), and Total Fixation Duration (TFD)—this study constructs a character-level eye-tracking dataset for Chinese academic texts.
 
-* Thirdly, we apply the three aforementioned eye-tracking features and their combinations to the task of extracting keywords from academic texts. The results demonstrate that FFD exhibits the most noticeable and consistent enhancement in the performance of the extraction model. The combination of FFD and FN eye-tracking features yields the best average improvement in model performance, though substantial variations exist across different models.
+* Thirdly, we apply the three aforementioned eye-tracking features and their combinations to the task of extracting keyphrases from academic texts. The results demonstrate that FFD exhibits the most noticeable and consistent enhancement in the performance of the extraction model. The combination of FFD and FN eye-tracking features yields the best average improvement in model performance, though substantial variations exist across different models.
 
 ## Directory Structure
 <pre>ET_AKE                                       # Root directory
@@ -37,13 +37,13 @@ In summary, this paper contributes in three main aspects:
 
 ## Dataset Discription
 ### 1、Reading Corpera for eye-tracking test
-Eye-tracking Corpera is derived from 330 academic text abstracts published in the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery" between the years 2000 and 2022, with each journal contributing 110 abstracts. Ten articles from the "Journal of Information Science" are designated for the pre-experiment, while the remaining 320 abstracts are utilized for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences (including titles), totaling 64,969 characters. Additionally, the Abstract320 dataset is constructed to investigate the impact of reading eye-tracking data on keyword extraction tasks.
+Eye-tracking Corpera is derived from 330 academic text abstracts published in the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery" between the years 2000 and 2022, with each journal contributing 110 abstracts. Ten articles from the "Journal of Information Science" are designated for the pre-experiment, while the remaining 320 abstracts are utilized for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences (including titles), totaling 64,969 characters. Additionally, the Abstract320 dataset is constructed to investigate the impact of reading eye-tracking data on keyphrase extraction tasks.
 ### 2、AKE Corpera
-We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyword extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 1, providing an overview of the keyword extraction test dataset.
+We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 1, providing an overview of the keyphrase extraction test dataset.
 <div align=middle>
-<b>Table 1: Overview of the Keyword Extraction Test Dataset</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 1: Overview of the Keyword Extraction Test Dataset"><br>
-  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyword sections.<br><br>
+<b>Table 1: Overview of the keyphrase Extraction Test Dataset</b><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 1: Overview of the keyphrase Extraction Test Dataset"><br>
+  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
 
 ## Configuration
@@ -57,7 +57,7 @@ In this study, the Abstract320 and Abstract5190 datasets will be utilized as the
 - Tqdm==4.59.0
 
 ## Quick Start
-To delve more deeply into the effectiveness of character-level eye-tracking features applied to keyword extraction tasks within the dataset, this study conducted tests using various keyword extraction models. The keyword extraction models are categorized into two types: those based on recurrent neural networks and those based on pre-trained language models.
+To delve more deeply into the effectiveness of character-level eye-tracking features applied to keyphrase extraction tasks within the dataset, this study conducted tests using various keyphrase extraction models. The keyphrase extraction models are categorized into two types: those based on recurrent neural networks and those based on pre-trained language models.
 ### Deep Learning Model Operation Guide
 1. <b>Parameter Configuration:</b>  Configure hyperparameters in the config.py file. The key parameters to set include the following.
     - `train_path`,`test_path`,`vocab_path`,`save_path`:Paths for training data, test data, vocabulary data, and result storage.
@@ -68,7 +68,7 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
     - `embed_dim`,`hidden_dim`: Dimensions of the embedding layer and hidden layer.
     - `batch_size`: The number of examples (or samples) processed together in one forward/backward pass during the training or inference process of a machine learning model.
     - `max_length`: Used to specify the maximum allowed length (number of tokens) for the input text sequence, commonly employed in natural language processing tasks such as text generation or text classification.
-2. <b>构建关键词抽取模型：</b> 运行main.py文件，选择要调用的模型并开始训练。
+2. <b>Constructing a Model for keyphrase Extraction:</b> Execute the main.py file, designate the model to be invoked, and commence the training process.
 
-3. <b>配置加入的眼动特征组合：</b> 修改模型中眼动特征组合。例如，下面的代码表示将所有眼动特征添加到模型中：
+3. <b>Configuring Incorporated Eye-Tracking Feature Combinations:</b> Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:
    `input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)`
