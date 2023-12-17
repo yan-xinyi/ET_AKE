@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/3/8 17:02
-# @Author  : leizhao150
+# @Author  : Yu Wenqi, Xinyi Yan
 import numpy as np
 import logging
 from torch import nn, optim
