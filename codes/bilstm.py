@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2022/3/8 17:02
-# @Author  : leizhao150
+# @Author  : Yu Wenqi, Xinyi Yan
 import numpy as np
 import logging
 from torch import nn, optim
@@ -332,6 +332,3 @@ def bl(train_path, test_path, vocab_path):
 
     return epoch3,epoch5,epoch10,best_P3, best_R3, best_F3, best_P5, best_R5, best_F5, best_P10, best_R10, best_F10
     # return best_P, best_R, best_F, best_10F, best_15F
-
-
-
