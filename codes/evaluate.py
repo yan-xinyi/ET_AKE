@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2023/6/1
-# @Author  : Yu Wenqi
+# @Author  : Yu Wenqi, Xinyi Yan
 import os
 import json
 
@@ -152,5 +152,4 @@ def evaluate10(predict_data, target_data, topk = 10):
     f1 = round(f1 * 100, 2)
 
     return p, r, f1
-
 
