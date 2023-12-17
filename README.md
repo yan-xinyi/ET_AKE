@@ -59,15 +59,15 @@ In this study, the Abstract320 and Abstract5190 datasets will be utilized as the
 ## Quick Start
 To delve more deeply into the effectiveness of character-level eye-tracking features applied to keyword extraction tasks within the dataset, this study conducted tests using various keyword extraction models. The keyword extraction models are categorized into two types: those based on recurrent neural networks and those based on pre-trained language models.
 ### Deep Learning Model Operation Guide
-1. <b>参数配置：</b> 在 `config.py` 文件中配置超参数。大致有以下参数需要设置：
-    - `train_path`,`test_path`,`vocab_path`,`save_path`: 训练数据、测试数据、词汇数据和结果的路径。
-    - `fs_name`, `fs_num`: 认知特征的名称和数量。
-    - `epochs`: 指整个训练数据集在训练过程中通过模型的次数。 
-    - `lr`: 学习率。
-    - `vocab_size`: 词汇量。
-    - `embed_dim`,`hidden_dim`: 嵌入层和隐藏层的维度。
-    - `batch_size`: 是指在机器学习模型的训练或推理过程中，一次正向/反向传递中一起处理的示例（或样本）的数量。
-    - `max_length`: 用于指定文本输入序列所允许的最大长度（标记数），常用于自然语言处理任务，如文本生成或文本分类。
+1. <b>Parameter Configuration:</b>  Configure hyperparameters in the config.py file. The key parameters to set include the following.
+    - `train_path`,`test_path`,`vocab_path`,`save_path`:Paths for training data, test data, vocabulary data, and result storage.
+    - `fs_name`, `fs_num`:Name and quantity of cognitive features.
+    - `epochs`: The number of passes through the entire training dataset during the training process. 
+    - `lr`: Learning rate.
+    - `vocab_size`: Vocabulary size.
+    - `embed_dim`,`hidden_dim`: Dimensions of the embedding layer and hidden layer.
+    - `batch_size`: The number of examples (or samples) processed together in one forward/backward pass during the training or inference process of a machine learning model.
+    - `max_length`: Used to specify the maximum allowed length (number of tokens) for the input text sequence, commonly employed in natural language processing tasks such as text generation or text classification.
 2. <b>构建关键词抽取模型：</b> 运行main.py文件，选择要调用的模型并开始训练。
 
 3. <b>配置加入的眼动特征组合：</b> 修改模型中眼动特征组合。例如，下面的代码表示将所有眼动特征添加到模型中：
