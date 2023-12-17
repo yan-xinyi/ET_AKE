@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2023/6/1
-# @Author  : Yu Wenqi
+# @Author  : Yu Wenqi, Xinyi Yan
 import numpy as np
 
 import logging
