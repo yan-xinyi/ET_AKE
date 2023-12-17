@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2023/6/1
-# @Author  : Yu Wenqi
+# @Author  : Yu Wenqi, Xinyi Yan
 import logging
 from config import *
 from Bilstm_crf import blcrf
