@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2023/6/1
-# @Author  : Yu Wenqi
+# @Author  : Yu Wenqi, Xinyi Yan
 import torch
 
 tag2ids = {'[PAD]': 0,'B': 1, 'I': 2, 'E': 3,'S': 4,"O": 5}
