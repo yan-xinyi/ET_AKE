@@ -1,15 +1,18 @@
 # Rresearch on keyword extraction with low-cost eye-tracking data acquisition technology
-With the advancement of cognitive signal acquisition and analysis technologies, eye-tracking corpora have found application in fields such as natural language processing (NLP). However, due to the exorbitant costs associated with collection and preprocessing, the construction of eye-tracking corpora and the evaluative research of downstream NLP tasks face significant constraints. Keyphrase extraction stands as a crucial technique in organizing and retrieving academic texts. Traditional methods struggle to achieve improvement due to the limited information within the documents. In order to address the aforementioned challenges, this study proposes a low-cost method for eye-tracking data collection. By embedding the SearchGazer eye-tracking script into a reading annotation platform, we realize cost-effective, multi-user synchronous data acquisition based on a webcam. Utilizing the constructed eye-tracking dataset of Chinese academic papers, we, for the first time, evaluate three eye-tracking features—First Fixation Duration (FFD), Fixation Count (FN), and Total Fixation Duration (TFD)—on a Keyphrase extraction model. The results indicate that each eye-tracking feature contributes to a certain enhancement in the Keyphrase extraction task, with FFD showing the most significant improvement. The combination of eye-tracking features further enhances the performance in Keyphrase extraction tasks, and the combination of FFD and TFD exhibits the optimal improvement effect.
 
-## 项目概述
-<b>这是 "Rresearch on keyword extraction with low-cost eye-tracking data acquisition technology"一文的源代码与关键词抽取数据来源。</b>
+## Overview
+<b>This is data and source Code for the paper "Rresearch on keyword extraction with low-cost eye-tracking data acquisition technology".</b>
 
-  近30多年来，阅读过程中的人类眼球运动被广泛视作注意力聚焦和进一步认知处理的反映(Ma et al., 2022)，已被广泛运用于心理学、语言学以及计算机领域的研究（添加相关文献）。目前，已有不少研究将眼动追踪数据集用于文本压缩、词性标注、情感识别、命名实体识别、关键词抽取等NLP任务中(Barrett et al., 2016; Hollenstein et al., 2019; Mishra et al., 2016; Zhang & Zhang, 2021)，并证实了眼动数据对这些任务的提升效果。
-  本研究提出一种高效低成本的眼动数据采集方法，将SearchGazer脚本(Papoutsaki et al., 2017)嵌入部署在服务器的阅读平台中，以同时获取多名被试者的眼动数据。此外如何将眼动特征指标合适的运用到关键词抽取模型中是一个很重要的问题。Zhang等提出将眼动特征使用到神经网络模型中的两种方法，一种是在有注意力机制的神经网络模型中将眼动特征作为注意力输出的真值；另一种是将眼动特征作为模型的外部特征(Zhang & Zhang, 2021)。本研究在此基础上增加预训练语言模型，因为预训练语言模型在NLP领域更具有优势。
-总的来说，本文的贡献包括以下三个方面：
-* 首先，本研究提出了一种低成本高效率的眼动数据采集方法，通过将SearchGazer脚本嵌入阅读平台，实现了低成本的眼动数据采集。
-* 其次，本研究基于三项眼动特征指标：FFD、FN及TFD，构建了字级的中文学术文本眼动数据集。
-* 然后，我们将上述三种眼动特征及其组合应用于学术文本关键词抽取任务。结果表面，FFD对抽取模型的性能提升最为明显和稳定。且FFD与FN的眼动特征组合对模型性能提升的平均效果最好，但在不同的模型中存在较大的差异性。
+  Over the past three decades, human ocular movements during the process of reading have been widely regarded as reflections of attentional focus and further cognitive processing (Ma et al., 2022). This phenomenon has found extensive applications in the realms of psychology, linguistics, and computer science, as evidenced by numerous studies (cite relevant literature). Presently, a considerable body of research has employed eye-tracking datasets in various natural language processing (NLP) tasks, including text compression, part-of-speech tagging, sentiment analysis, named entity recognition, and keyword extraction (Barrett et al., 2016; Hollenstein et al., 2019; Mishra et al., 2016; Zhang & Zhang, 2021). These studies affirm the enhancing effects of eye-tracking data on the aforementioned tasks.
+
+In this study, we propose an efficient and cost-effective method for collecting eye-tracking data. The SearchGazer script (Papoutsaki et al., 2017) is integrated into a reading platform deployed on a server, allowing simultaneous acquisition of eye-tracking data from multiple participants. Additionally, the judicious application of eye-tracking feature indicators to keyword extraction models poses a crucial question. Zhang et al. proposed two methods for incorporating eye-tracking features into neural network models: one involves treating eye-tracking features as the ground truth for attention output in neural network models with attention mechanisms, and the other entails treating eye-tracking features as external features of the model (Zhang & Zhang, 2021). Building upon this foundation, our study introduces pre-trained language models, leveraging the advantages they hold in the NLP domain.
+In summary, this paper contributes in three main aspects:
+
+Firstly, our research introduces a cost-effective and efficient method for eye-tracking data collection. By embedding the SearchGazer script into the reading platform, we achieve low-cost acquisition of eye-tracking data.
+
+Secondly, based on three eye-tracking feature indicators—First Fixation Duration (FFD), Fixation Count (FN), and Total Fixation Duration (TFD)—this study constructs a character-level eye-tracking dataset for Chinese academic texts.
+
+Thirdly, we apply the three aforementioned eye-tracking features and their combinations to the task of extracting keywords from academic texts. The results demonstrate that FFD exhibits the most noticeable and consistent enhancement in the performance of the extraction model. The combination of FFD and FN eye-tracking features yields the best average improvement in model performance, though substantial variations exist across different models.
 
 ## 项目文件结构
 <pre>ET_AKE                                       # 根目录
