@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2023/6/1
-# @Author  : Yu Wenqi
+# @Author  : Yu Wenqi, Xinyi Yan
 import logging
 from config import *
 from Bilstm_crf import blcrf
@@ -83,4 +83,3 @@ if __name__ == '__main__':
        logging.info("The learning rate is:" + str(lr))
        logging.info("The dropout rate is:" + str(dropout_value))
        logging.info("The weight decay is:" + str(weight_decay))
-
