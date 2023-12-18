@@ -1,4 +1,4 @@
-# Low-Cost Eye-Tracking Technology for Keyphrase Extraction
+# Enhancing Keyword Extraction with Low-cost Eye-tracking Data
 
 ## Overview
 <b>This is data and source Code for the paper "Enhancing Keyword Extraction with Low-cost Eye-tracking Data".</b>
@@ -72,3 +72,8 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
 
 3. <b>Configuring Incorporated Eye-Tracking Feature Combinations:</b> Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:
    `input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)`
+
+## Citation
+Please cite the following paper if you use this code and dataset in your work.
+    
+>Chengzhi Zhang, Xinyi Yan, Wenqi Yu. Enhancing Keyword Extraction with Low-cost Eye-tracking Data. 2023 (Working Paper）.
