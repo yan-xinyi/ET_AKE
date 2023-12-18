@@ -59,7 +59,7 @@ In this study, the Abstract320 and Abstract5190 datasets will be utilized as the
 ## Quick Start
 To delve more deeply into the effectiveness of character-level eye-tracking features applied to keyphrase extraction tasks within the dataset, this study conducted tests using various keyphrase extraction models. The keyphrase extraction models are categorized into two types: those based on recurrent neural networks and those based on pre-trained language models.
 ### Deep Learning Model Operation Guide
-1. <b>Parameter Configuration:</b>  Configure hyperparameters in the config.py file. The key parameters to set include the following.
+* <b>Parameter Configuration:</b>  Configure hyperparameters in the config.py file. The key parameters to set include the following.
     - `train_path`,`test_path`,`vocab_path`,`save_path`:Paths for training data, test data, vocabulary data, and result storage.
     - `fs_name`, `fs_num`:Name and quantity of cognitive features.
     - `epochs`: The number of passes through the entire training dataset during the training process. 
@@ -68,9 +68,9 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
     - `embed_dim`,`hidden_dim`: Dimensions of the embedding layer and hidden layer.
     - `batch_size`: The number of examples (or samples) processed together in one forward/backward pass during the training or inference process of a machine learning model.
     - `max_length`: Used to specify the maximum allowed length (number of tokens) for the input text sequence, commonly employed in natural language processing tasks such as text generation or text classification.
-2. <b>Constructing a Model for keyphrase Extraction:</b> Execute the main.py file, designate the model to be invoked, and commence the training process.
+* <b>Constructing a Model for keyphrase Extraction:</b> Execute the main.py file, designate the model to be invoked, and commence the training process.
 
-3. <b>Configuring Incorporated Eye-Tracking Feature Combinations:</b> Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:
+* <b>Configuring Incorporated Eye-Tracking Feature Combinations:</b> Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:
    `input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)`
 
 ## Citation
