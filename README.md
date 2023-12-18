@@ -1,7 +1,7 @@
 # Low-Cost Eye-Tracking Technology for Keyphrase Extraction
 
 ## Overview
-<b>This is data and source Code for the paper "Rresearch on keyphrase extraction with low-cost eye-tracking data acquisition technology".</b>
+<b>This is data and source Code for the paper "Enhancing Keyword Extraction with Low-cost Eye-tracking Data".</b>
 
   Over the past three decades, human ocular movements during the process of reading have been widely regarded as reflections of attentional focus and further cognitive processing (Ma et al., 2022). This phenomenon has found extensive applications in the realms of psychology, linguistics, and computer science, as evidenced by numerous studies (cite relevant literature). Presently, a considerable body of research has employed eye-tracking datasets in various natural language processing (NLP) tasks, including text compression, part-of-speech tagging, sentiment analysis, named entity recognition, and keyphrase extraction (Barrett et al., 2016; Hollenstein et al., 2019; Mishra et al., 2016; Zhang & Zhang, 2021). These studies affirm the enhancing effects of eye-tracking data on the aforementioned tasks.
 
