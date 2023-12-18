@@ -1,4 +1,4 @@
-# Rresearch on keyphrase extraction with low-cost eye-tracking data acquisition technology
+# Low-Cost Eye-Tracking Technology for Keyphrase Extraction
 
 ## Overview
 <b>This is data and source Code for the paper "Rresearch on keyphrase extraction with low-cost eye-tracking data acquisition technology".</b>
