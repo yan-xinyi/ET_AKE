@@ -42,7 +42,7 @@ Eye-tracking Corpera is derived from 330 academic text abstracts published in th
 We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 1, providing an overview of the keyphrase extraction test dataset.
 <div align=left>
 <b>Table 1: Overview of the keyphrase Extraction Test Dataset</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="70%" alt="Table 1: Overview of the keyphrase Extraction Test Dataset"><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 1: Overview of the keyphrase Extraction Test Dataset"><br>
   <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
 
