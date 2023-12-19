@@ -161,7 +161,7 @@ class BertNerModel(nn.Module):
         self.bert = BertModel.from_pretrained(weight)
         self.dropout = nn.Dropout(0.1)
 
-        # 特征数
+        # Number of features
         self.classifier = nn.Linear(768 + 2, num_labels)
 
     def forward(self, input_ids, attention_mask, extra_features, token_type_ids=None):
@@ -170,19 +170,18 @@ class BertNerModel(nn.Module):
         pooled_output = outputs[0]
         bert_outputs = self.dropout(pooled_output)
 
-        # 特征
+        # Add eye-tracking features
         outputs = torch.concat((bert_outputs, extra_features[:, :, :]), -1)
 
-        # 13特征
+        # Add 13 eye-tracking features
         # outputs = torch.concat((bert_outputs,extra_features[:,:,::2]),-1)
 
-        # 无特征
+        # without adding features
         # outputs = bert_outputs
-        outputs = self.classifier(outputs)
 
         return outputs
 
-#修改pos转化为词-函数
+# Modify pos into word-function
 def TagConvert(raw_tags, words_set, poss=None):
 
     true_tags = []
@@ -341,7 +340,7 @@ def BERT():
     print(len(fin_targets))
     print(len(fin_prediction))
 
-    # 将预测结果和目标结果存到txt中
+    # Save predictions and target results to txt
     with open(save_path, mode='a+', encoding='utf-8') as f:
         len1 = len(fin_prediction)
         for i in range(0, len1):
