@@ -45,8 +45,8 @@ The corpus for this study emanates from the academic text abstracts of the journ
 <div align=left>
 <b>Table 1: Table of details of 10 subjects</b><br>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_3.png" width="60%" alt="Table 1: Table of details of 10 subjects"><br>
-  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. <br>The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
+
 ### Eye-tracking Data Acquisition
 * <b>Searchgazer script:</b> The experiment involves incorporating the searchgazer.js script into the search engine side, allowing real-time predictive gaze data using only a webcam. WebGazer.js is an eye tracking library that uses common webcams to infer the eye-gaze locations of web visitors on a page in real time. The eye tracking model it contains self-calibrates by watching web visitors interact with the web page and trains a mapping between the features of the eye and positions on the screen. WebGazer.js is written entirely in JavaScript and with only a few lines of code can be integrated in any website that wishes to better understand their visitors and transform their user experience. WebGazer.js runs entirely in the client browser, so no video data needs to be sent to a server, and it requires the user's consent to access their webcam.
 <div align=left>
