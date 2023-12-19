@@ -41,8 +41,10 @@ In summary, this paper contributes in three main aspects:
 The corpus for this study emanates from the academic text abstracts of the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery," encompassing a total of 330 articles published from the year 2000 to 2022, with each journal contributing 110 abstracts. Among these, 10 articles from the "Journal of Information Science" are allocated for preliminary experiments, while the remaining 320 are earmarked for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences, inclusive of titles, amounting to a total of 64,969 characters.
 ### Experimental Environment and Participants
 * Experimental Environment
+  
 We utilized the Flask framework to establish a platform for collecting user eye-tracking behavior data, integrating the SearchGazer library for frontend collection of users' eye movement coordinates while reading the corpus. The SearchGazer library is an eye-tracking tool that achieves high-precision collection of eye-tracking data by accessing the webcam using the getUserMedia/Stream API (Papoutsaki et al., 2017). Written in JavaScript, SearchGazer can be seamlessly integrated into any search engine seeking to conduct remote eye-tracking research with just a few lines of code. It achieves a maximum collection frequency of 60Hz, with a collection point interval of approximately 16.67ms, sufficient for identifying gaze segments within the range of 50ms to 1500ms (Rayner, 1998). In the eye movement data collection platform, reading materials are sequentially displayed as short sentences at the center of the browser, ensuring complete and centered display on common laptops. To maintain universality and consistency, the font size is set at 50px, letter spacing at 10px, with a maximum of 19 characters per line, displayed in two lines at most, and a line spacing of 100px.
 * Participants
+  
 The participants in the experiment consisted of 10 healthy students, native Chinese speakers, specializing in information management, and possessing a high level of academic literacy. Detailed information can be found in Table 1. In this context, "valid eye-tracking points" refers to the number of eye-tracking coordinates collected within the coordinate range of the reading materials. "Accuracy" denotes the participants' correctness in answering the test questions after reading.
 <div align=left>
 <b>Table 1: Table of details of 10 subjects</b><br>
@@ -50,13 +52,15 @@ The participants in the experiment consisted of 10 healthy students, native Chin
 </div>
 
 ### Eye-tracking Data Acquisition
-* Searchgazer script 
+* Searchgazer script
+  
 The experiment involves incorporating the searchgazer.js script into the search engine side, allowing real-time predictive gaze data using only a webcam. WebGazer.js is an eye tracking library that uses common webcams to infer the eye-gaze locations of web visitors on a page in real time. The eye tracking model it contains self-calibrates by watching web visitors interact with the web page and trains a mapping between the features of the eye and positions on the screen. WebGazer.js is written entirely in JavaScript and with only a few lines of code can be integrated in any website that wishes to better understand their visitors and transform their user experience. WebGazer.js runs entirely in the client browser, so no video data needs to be sent to a server, and it requires the user's consent to access their webcam.
 <div align=left>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_2.png" width="60%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
   <b>Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface.</b><br><br>
 </div>
 * Data Acquisition
+
 To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
 
 ## Dataset Discription
