@@ -18,10 +18,13 @@ In summary, this paper contributes in three main aspects:
 <pre>ET_AKE                                       # Root directory
 ├─ data                                      # <b>Experimental datasets</b>
 │    ├── Abstract320                         # Eye-tracking Corpus
-│    │    └── test
+│         ├── test   
+│         ├── train 
+│         └── vocab
 │    └── Abstract5190                        # AKE Corpus
-│         ├── test           
-│         └── train
+│         ├── test   
+│         ├── train 
+│         └── vocab
 ├─ result                                    # <b>Result dir</b>
 └─ codes                                     # <b>Codest dir</b>
      ├── main.py                             # <b>main function module</b>
