@@ -70,6 +70,16 @@ The experiment involves incorporating the searchgazer.js script into the search 
 
 To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
 
+
+* Preprocessing of Eye-tracking Data and Extraction of Eye Movement Features
+
+This study records eye movement features at the level of individual words, avoiding segmentation issues and providing a more nuanced analysis of reading processing. To retain valid gaze information as much as possible, the study, in conjunction with the frequency of the SearchGazer eye-tracking library, determined the effective gaze threshold to be between 16.7ms and 1500ms. In other words, the study retained information only when participants generated between 2 and 91 consecutive gaze points on a specific word. FFD (First Fixation Duration), FN (Fixation Count), and TFD (Total Fixation Duration) were selected as eye movement features, and Table 2 records the abbreviations and meanings of these eye-tracking measurement indicators.
+<div align=left>
+<b>Table 2: Definition of three eye-tracking measures</b><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_4.png" width="80%" alt="Table 2: Definition of three eye-tracking measures"><br>
+  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. <br>The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
+</div>
+
 ## Dataset Discription
 ### Reading Corpora for Eye-tracking Test
 Eye-tracking Corpora is derived from 330 academic text abstracts published in the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery" between the years 2000 and 2022, with each journal contributing 110 abstracts. Ten articles from the "Journal of Information Science" are designated for the pre-experiment, while the remaining 320 abstracts are utilized for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences (including titles), totaling 64,969 characters. Additionally, the Abstract320 dataset is constructed to investigate the impact of reading eye-tracking data on keyphrase extraction tasks.
