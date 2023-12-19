@@ -36,7 +36,7 @@ In summary, this paper contributes in three main aspects:
      └── evaluate.py                         # Evaluation module
 </pre>
 
-## Low-cost eye-tracking data acquisition
+##  Acquisition of Low-cost Eye-tracking Data
 ### Eye-tracking reading corpus preparation
 The corpus for this study emanates from the academic text abstracts of the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery," encompassing a total of 330 articles published from the year 2000 to 2022, with each journal contributing 110 abstracts. Among these, 10 articles from the "Journal of Information Science" are allocated for preliminary experiments, while the remaining 320 are earmarked for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences, inclusive of titles, amounting to a total of 64,969 characters.
 ### Experimental Environment and Participants
@@ -51,7 +51,7 @@ The participants in the experiment consisted of 10 healthy students, native Chin
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_3.png" width="60%" alt="Table 1: Table of details of 10 subjects"><br>
 </div>
 
-### Eye-tracking Data Acquisition
+### Acquisition of Eye-tracking Data 
 * Searchgazer script
   
 The experiment involves incorporating the searchgazer.js script into the search engine side, allowing real-time predictive gaze data using only a webcam. WebGazer.js is an eye tracking library that uses common webcams to infer the eye-gaze locations of web visitors on a page in real time. The eye tracking model it contains self-calibrates by watching web visitors interact with the web page and trains a mapping between the features of the eye and positions on the screen. WebGazer.js is written entirely in JavaScript and with only a few lines of code can be integrated in any website that wishes to better understand their visitors and transform their user experience. WebGazer.js runs entirely in the client browser, so no video data needs to be sent to a server, and it requires the user's consent to access their webcam.
@@ -65,7 +65,7 @@ The experiment involves incorporating the searchgazer.js script into the search 
 To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
 
 ## Dataset Discription
-### Reading Corpora for eye-tracking test
+### Reading Corpora for Eye-tracking Test
 Eye-tracking Corpora is derived from 330 academic text abstracts published in the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery" between the years 2000 and 2022, with each journal contributing 110 abstracts. Ten articles from the "Journal of Information Science" are designated for the pre-experiment, while the remaining 320 abstracts are utilized for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences (including titles), totaling 64,969 characters. Additionally, the Abstract320 dataset is constructed to investigate the impact of reading eye-tracking data on keyphrase extraction tasks.
 ### AKE Corpora
 We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 2, providing an overview of the keyphrase extraction test dataset.
