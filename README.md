@@ -62,7 +62,7 @@ We selected academic papers from the same journals as the eye-tracking corpus, e
 <div align=left>
 <b>Table 2: Overview of the keyphrase Extraction Test Dataset</b><br>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 2: Overview of the keyphrase Extraction Test Dataset"><br>
-  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
+  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. <br>The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
 
 ## Configuration
