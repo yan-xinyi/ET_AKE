@@ -49,7 +49,8 @@ The experiment involves incorporating the <b>searchgazer.js</b> script into the 
 <b>Figure 1: Composite image demonstrating the experimental setup for the target selection task. Clmtrackr is used for facial feature detection. Predictions from different regression models
 are depicted with different colors. Users aim at the red target.</b><br>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_2.png" width="60%" alt="Table 2: Overview of the keyphrase Extraction Test Dataset"><br>
-  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
+  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks.<br>
+                The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
 To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
 
