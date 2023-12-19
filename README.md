@@ -39,17 +39,28 @@ In summary, this paper contributes in three main aspects:
 ## Low-cost eye-tracking data acquisition
 ### Eye-tracking reading corpus preparation
 The corpus for this study emanates from the academic text abstracts of the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery," encompassing a total of 330 articles published from the year 2000 to 2022, with each journal contributing 110 abstracts. Among these, 10 articles from the "Journal of Information Science" are allocated for preliminary experiments, while the remaining 320 are earmarked for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences, inclusive of titles, amounting to a total of 64,969 characters.
+### Experimental Environment and Participants
+We utilized the Flask framework① to establish a platform for collecting user eye-tracking behavior data, integrating the SearchGazer② library for frontend collection of users' eye movement coordinates while reading the corpus. The SearchGazer library is an eye-tracking tool that achieves high-precision collection of eye movement data by accessing the webcam using the getUserMedia/Stream API (Papoutsaki et al., 2017). Written in JavaScript, SearchGazer can be seamlessly integrated into any search engine seeking to conduct remote eye-tracking research with just a few lines of code. It achieves a maximum collection frequency of 60Hz, with a collection point interval of approximately 16.67ms, sufficient for identifying gaze segments within the range of 50ms to 1500ms (Rayner, 1998). In the eye movement data collection platform, reading materials are sequentially displayed as short sentences at the center of the browser, ensuring complete and centered display on common laptops. To maintain universality and consistency, the font size is set at 50px, letter spacing at 10px, with a maximum of 19 characters per line, displayed in two lines at most, and a line spacing of 100px.
+
 ### Eye-tracking Data Acquisition
-The experiment involves incorporating the <b>searchgazer.js<\b> script into the search engine side, allowing real-time predictive gaze data using only a webcam. For specific details on the experimental environment configuration and personnel arrangements, please refer to Appendix A.1. To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
+The experiment involves incorporating the <b>searchgazer.js</b> script into the search engine side, allowing real-time predictive gaze data using only a webcam. 
+
+<div align=middle>
+<b>Figure 1: Composite image demonstrating the experimental setup for the target selection task. Clmtrackr is used for facial feature detection. Predictions from different regression models
+are depicted with different colors. Users aim at the red target.</b><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_2.png" width="60%" alt="Table 2: Overview of the keyphrase Extraction Test Dataset"><br>
+  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
+</div>
+To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
 
 ## Dataset Discription
 ### Reading Corpora for eye-tracking test
 Eye-tracking Corpora is derived from 330 academic text abstracts published in the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery" between the years 2000 and 2022, with each journal contributing 110 abstracts. Ten articles from the "Journal of Information Science" are designated for the pre-experiment, while the remaining 320 abstracts are utilized for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences (including titles), totaling 64,969 characters. Additionally, the Abstract320 dataset is constructed to investigate the impact of reading eye-tracking data on keyphrase extraction tasks.
 ### AKE Corpora
-We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 1, providing an overview of the keyphrase extraction test dataset.
+We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 2, providing an overview of the keyphrase extraction test dataset.
 <div align=middle>
-<b>Table 1: Overview of the keyphrase Extraction Test Dataset</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 1: Overview of the keyphrase Extraction Test Dataset"><br>
+<b>Table 2: Overview of the keyphrase Extraction Test Dataset</b><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 2: Overview of the keyphrase Extraction Test Dataset"><br>
   <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
 
@@ -86,6 +97,9 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
 * <b>Configuring Incorporated Eye-Tracking Feature Combinations:</b>
   - Set the number of features:  `self.classifier = nn.Linear(768 + 2, num_labels)`
   - Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:   `input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)`
+## Link
+* ① Flask Framework: Flask is a widely adopted Python web framework designed for constructing web applications: https://flask.palletsprojects.com/en/2.3.x/
+* ② SearchGazer: SearchGazer is a tool for eye-tracking: https://webgazer.cs.brown.edu/search/
 ## Citation
 Please cite the following paper if you use this code and dataset in your work.
     
