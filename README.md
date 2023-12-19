@@ -77,8 +77,10 @@ This study records eye movement features at the level of individual words, avoid
 <div align=left>
 <b>Table 2: Definition of three eye-tracking measures</b><br>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_4.png" width="80%" alt="Table 2: Definition of three eye-tracking measures"><br>
-  <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. <br>The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
+
+
+To minimize the impact of differences in reading speed and reading habits among participants, this study calculated the mean eye movement indicators for each character separately across different participants. If more than half of the participants did not provide valid eye-tracking values for a particular character, the eye movement feature values for that character were deemed invalid.
 
 ## Dataset Discription
 ### Reading Corpora for Eye-tracking Test
