@@ -51,7 +51,7 @@ We utilized the Flask framework to establish a platform for collecting user eye-
 The participants in the experiment consisted of 10 healthy students, native Chinese speakers, specializing in information management, and possessing a high level of academic literacy. Detailed information can be found in Table 1. In this context, "valid eye-tracking points" refers to the number of eye-tracking coordinates collected within the coordinate range of the reading materials. "Accuracy" denotes the participants' correctness in answering the test questions after reading.
 <div align=left>
 <b>Table 1: Detailed Information of the 10 Participants</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_3.png" width="60%" alt="Table 1: Table of details of 10 subjects"><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_3.png" width="80%" alt="Table 1: Table of details of 10 subjects"><br>
 </div>
 
 ### Acquisition of Eye-tracking Data 
