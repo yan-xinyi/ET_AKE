@@ -18,13 +18,13 @@ In summary, this paper contributes in three main aspects:
 <pre>ET_AKE                                       # Root directory
 ├─ data                                      # <b>Experimental datasets</b>
 │    ├── Abstract320                         # Eye-tracking Corpus
-│    │    ├── test   
-│    │    ├── train 
-│    │    └── vocab
+│    │    ├── test                           # Test files containing eye-tracking features
+│    │    ├── train                          # Train files containing eye-tracking features
+│    │    └── vocab                          # Vocabulary files for the eye-tracking corpus
 │    └── Abstract5190                        # AKE Corpus
-│         ├── test   
-│         ├── train 
-│         └── vocab
+│         ├── test                           # Test files of AKE
+│         ├── train                          # Train files of AKE
+│         └── vocab                          # Vocabulary files of AKE
 ├─ result                                    # <b>Result dir</b>
 └─ codes                                     # <b>Codest dir</b>
      ├── main.py                             # <b>main function module</b>
