@@ -61,6 +61,7 @@ The experiment involves incorporating the searchgazer.js script into the search 
 <div align=left>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_2.png" width="80%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
   <b>Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface.</b><br><br>
+  <b>Note: </b> Explanation of the letter marks in the Image are as follows. A: "User Eye Movement Data Reading Collection Platform"; B: Article number + Article title; C: User facial calibration interface; D: Reading main text; E: The small black text above indicates "current sentence number/total sentences in the abstract being read," and the two page-switching buttons below represent "previous page" and "next page."<br><br>
 </div>
 
 * Data Acquisition
