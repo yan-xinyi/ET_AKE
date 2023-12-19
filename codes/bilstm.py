@@ -15,11 +15,11 @@ param_path = "./result/tf_param.pkl"
 class TextDataSet(Dataset):
 
     def __init__(self, data_path, vocab_path):
-        # 读取词典
+        # Read the dictionary
         self.word2ids = {word: i for i, word in enumerate(json.load(open(vocab_path, 'r', encoding='utf-8')))}
         self.id2words = {val: key for key, val in self.word2ids.items()}
 
-        # 读取数据
+        # retrieve data
         self.datas = list(json.load(open(data_path, 'r', encoding='utf-8')).values())
 
     def __getitem__(self, item):
@@ -89,11 +89,11 @@ class BiLSTM(nn.Module):
          input = torch.cat([input, inputs['et'][:,:,:8]], dim=-1)
         '''
 
-        #全特征
+        # Add Full Feature
         # input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)
-        #单特征
+        # Add Single Feature
         # input = torch.cat([input, inputs['et'][:, :,1:3]], dim=-1)
-        #双特征
+        # Add 2 Features
         # input = torch.cat([input, inputs['et'][:,:,::2]], dim=-1)
 
         # coding
@@ -101,9 +101,7 @@ class BiLSTM(nn.Module):
         # input = self.dropout(torch.relu(self.layernorm(input)))    # -dropout
         output = self.fc(input)
         # logit = self.softmax(output)
-
         return output
-
 
 
 def get_outputs(feats):
@@ -113,11 +111,11 @@ def get_outputs(feats):
 def bl(train_path, test_path, vocab_path):
 
     torch.manual_seed(1)
-    #处理训练数据和测试数据
+    # Processing of training and test data
     trainLoader = DataLoader(dataset=TextDataSet(train_path, vocab_path), batch_size=batch_size)
     testLoader = DataLoader(TextDataSet(test_path, vocab_path), batch_size=batch_size)
 
-    #设定模型参数
+    # Set the model parameters
     model = BiLSTM(vocab_size=vocab_size,
                    embed_dim=embed_dim,
                    hidden_dim=hidden_dim).to(device)
@@ -125,7 +123,7 @@ def bl(train_path, test_path, vocab_path):
     optimizer = optim.Adam(model.parameters(), lr=lr, weight_decay=weight_decay)
     #optimizer = torch.optim.RMSprop(model.parameters(), lr=lr, alpha=0.9)
 
-    # 训练模型
+    # Train Models
     epoch3,epoch5,epoch10, best_P3, best_R3, best_F3,best_P5,best_R5,best_F5,best_P10,best_R10,best_F10 = 0,0,0,0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
     fin_targets = []
     fin_prediction = []
@@ -150,7 +148,7 @@ def bl(train_path, test_path, vocab_path):
         logging.info("epoch: "+str(epoch))
         logging.info("avg_loss: %.2f"%np.average(avg_loss))
 
-        # 测试模型
+        # test the model
         model.eval()
         y_true, y_pred = [], []
 
@@ -175,7 +173,7 @@ def bl(train_path, test_path, vocab_path):
                 y_true.extend([i for item in true_tags for i in item])
                 y_pred.extend([i for item in out_list for i in item])
 
-                # 获取id2word到words_set
+                # Obtain id2word to words_set
                 words_set = []
 
                 for item in inputs['input_ids'].tolist():
@@ -216,7 +214,7 @@ def bl(train_path, test_path, vocab_path):
 
 
                 for i in range(len(out_list)):
-                    #每篇摘要的词向量（预测）
+                    # Word vectors per abstract (predicted)
                     kw_list = []
                     nkw_list = ""
                     j1_len = min(len(out_list[i]), len(words_set[i]))
@@ -256,7 +254,7 @@ def bl(train_path, test_path, vocab_path):
         P3_str = "P(3):" + "\t" + str(P3)
         R3_str = "R(3):" + "\t" + str(R3)
         F3_str = "F(3):" + "\t" + str(F3)
-        print("按照关键词进行评估：")
+        print("Evaluate by keywords:")
         print(P3_str)
         print(R3_str)
         print(F3_str)
@@ -273,7 +271,7 @@ def bl(train_path, test_path, vocab_path):
         P5_str = "P(5):" + "\t" + str(P5)
         R5_str = "R(5):" + "\t" + str(R5)
         F5_str = "F(5):" + "\t" + str(F5)
-        print("按照关键词进行评估：")
+        print("Evaluate by keywords:")
         print(P5_str)
         print(R5_str)
         print(F5_str)
@@ -305,7 +303,7 @@ def bl(train_path, test_path, vocab_path):
     print(len(fin_targets))
     print(len(fin_prediction))
 
-    # #将预测结果和目标结果存到txt中
+    # Save predictions and target results to txt
     with open(save_path, mode='a+',encoding='utf-8') as f:
         len1 = len(fin_prediction)
         for i in range(0, len1):
