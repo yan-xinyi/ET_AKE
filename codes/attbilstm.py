@@ -122,11 +122,11 @@ class ATTBiLSTM(nn.Module):
          input = torch.cat([input, inputs['et'][:,:,:5]], dim=-1)
         '''
 
-        # 全特征
-        # input = torch.cat([input, inputs['et'][:, :, :3]], dim=-1)
-        # 单特征
+        # Add Full Feature
+        # input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)
+        # Add Single Feature
         # input = torch.cat([input, inputs['et'][:, :,1:3]], dim=-1)
-        # 双特征
+        # Add 2 Features
         # input = torch.cat([input, inputs['et'][:,:,::2]], dim=-1)
 
         # coding
