@@ -76,7 +76,7 @@ To ensure the coherence of reading, each reading task is designated as a complet
 This study records eye movement features at the level of individual words, avoiding segmentation issues and providing a more nuanced analysis of reading processing. To retain valid gaze information as much as possible, the study, in conjunction with the frequency of the SearchGazer eye-tracking library, determined the effective gaze threshold to be between 16.7ms and 1500ms. In other words, the study retained information only when participants generated between 2 and 91 consecutive gaze points on a specific word. FFD (First Fixation Duration), FN (Fixation Count), and TFD (Total Fixation Duration) were selected as eye movement features, and Table 2 records the abbreviations and meanings of these eye-tracking measurement indicators.
 <div align=left>
 <b>Table 2: Definition of three eye-tracking measures</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_4.png" width="80%" alt="Table 2: Definition of three eye-tracking measures"><br>
+  <img src="https://yan-xinyi.github.io/figures/ET_AKE_4.png" width="60%" alt="Table 2: Definition of three eye-tracking measures"><br>
 </div>
 
 
