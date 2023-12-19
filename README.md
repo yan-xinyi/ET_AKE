@@ -98,8 +98,8 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
   - Set the number of features:  `self.classifier = nn.Linear(768 + 2, num_labels)`
   - Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:   `input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)`
 ## Link
-* ① Flask Framework: Flask is a widely adopted Python web framework designed for constructing web applications: https://flask.palletsprojects.com/en/2.3.x/
-* ② SearchGazer: SearchGazer is a tool for eye-tracking: https://webgazer.cs.brown.edu/search/
+* Flask Framework: Flask is a widely adopted Python web framework designed for constructing web applications: https://flask.palletsprojects.com/en/2.3.x/
+* SearchGazer: SearchGazer is a tool for eye-tracking: https://webgazer.cs.brown.edu/search/
 ## Citation
 Please cite the following paper if you use this code and dataset in your work.
     
