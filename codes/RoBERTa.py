@@ -341,7 +341,7 @@ def macBERT():
     print(len(fin_targets))
     print(len(fin_prediction))
 
-    # 将预测结果和目标结果存到txt中
+    # Save predictions and target results to txt
     with open(save_path, mode='a+', encoding='utf-8') as f:
         len1 = len(fin_prediction)
         for i in range(0, len1):
