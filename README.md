@@ -59,6 +59,7 @@ The experiment involves incorporating the searchgazer.js script into the search 
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_2.png" width="60%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
   <b>Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface.</b><br><br>
 </div>
+
 * Data Acquisition
 
 To ensure the coherence of reading, each reading task is designated as a complete abstract, with the first sentence of the abstract presented as the title. Before the commencement of each reading task, the system prompts participants to click on nine fixed points for gaze calibration. During the formal experiment, participants are required to keep their heads still, while the mouse follows their line of sight for further eye-tracking calibration. Following the task, there is also a test question (selecting keywords from three provided words) to assess the participants' reading focus. The 10 participants are evenly divided into two groups, with each group completing the reading tasks at the same time and location.
