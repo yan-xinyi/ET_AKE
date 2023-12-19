@@ -11,18 +11,17 @@ from BERT import BERT
 from macBERT import macBERT
 from RoBERTa import RoBERta
 
-
 if __name__ == '__main__':
 
 
    for i in range(1):
 
-       # 将结果打印到日志中
+       # Print the results to the log
        logging.basicConfig(level=logging.DEBUG,
                            format='%(asctime)s - %(lineno)d - %(levelname)s: %(message)s',
                            datefmt='%m-%d %H:%M',
-                           filename=logfile,  # 文件内容
-                           filemode='a')  # w覆盖写入，a继续写入
+                           filename=logfile,  # type of file
+                           filemode='a')  # w for overwrite，a for add
 
        #selfattention_BiLSTM_CRF
        # best_P, best_R, best_F= satt_blcrfpro(train_path, test_path, vocab_path)
