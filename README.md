@@ -16,23 +16,24 @@ In summary, this paper contributes in three main aspects:
 
 ## Directory Structure
 <pre>ET_AKE                                       # Root directory
-├─ Data                                      # <b>Experimental datasets</b>
+├─ data                                      # <b>Experimental datasets</b>
 │    ├── Abstract320                         # Eye-tracking Corpus
 │    │    └── test
 │    └── Abstract5190                        # AKE Corpus
 │         ├── test           
 │         └── train
-├─ Result                                    # <b>Result dir</b>
-├── main.py                                  # <b>main function module</b>
-├── bilstm.py                                # BiLSTM module
-├── bilstmcrf.py                             # BiLSTM+CRF module
-├── attbilstm.py                             # Attention based BiLSTM module
-├── attbilstm_crf.py                         # Attention based BiLSTM+CRF module
-├── BERT.py                                  # BERT module
-├── macBERT.py                               # macBERT module
-├── RoBERTa.py                               # RoBERTa module
-├── config.py                                # Configuration module
-└── evaluate.py                              # Evaluation module
+├─ result                                    # <b>Result dir</b>
+└─ codes                                     # <b>Codest dir</b>
+     ├── main.py                             # <b>main function module</b>
+     ├── bilstm.py                           # BiLSTM module
+     ├── bilstmcrf.py                        # BiLSTM+CRF module
+     ├── attbilstm.py                        # Attention based BiLSTM module
+     ├── attbilstm_crf.py                    # Attention based BiLSTM+CRF module
+     ├── BERT.py                             # BERT module
+     ├── macBERT.py                          # macBERT module
+     ├── RoBERTa.py                          # RoBERTa module
+     ├── config.py                           # Configuration module
+     └── evaluate.py                         # Evaluation module
 </pre>
 
 ## Dataset Discription
@@ -40,7 +41,7 @@ In summary, this paper contributes in three main aspects:
 Eye-tracking Corpora is derived from 330 academic text abstracts published in the journals "Journal of Information Science," "Journal of Information," and "Data Analysis and Knowledge Discovery" between the years 2000 and 2022, with each journal contributing 110 abstracts. Ten articles from the "Journal of Information Science" are designated for the pre-experiment, while the remaining 320 abstracts are utilized for the formal eye-tracking experiment. The formal reading corpus comprises 1,215 complete sentences (including titles), totaling 64,969 characters. Additionally, the Abstract320 dataset is constructed to investigate the impact of reading eye-tracking data on keyphrase extraction tasks.
 ### AKE Corpora
 We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 1, providing an overview of the keyphrase extraction test dataset.
-<div align=left>
+<div align=middle>
 <b>Table 1: Overview of the keyphrase Extraction Test Dataset</b><br>
   <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 1: Overview of the keyphrase Extraction Test Dataset"><br>
   <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
@@ -72,6 +73,9 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
 
 * <b>Configuring Incorporated Eye-Tracking Feature Combinations:</b> Adjust the amalgamation of eye-tracking features within the model. For instance, the ensuing code signifies the inclusion of all eye-tracking features into the model:
    `input = torch.cat([input, inputs['et'][:,:,:3]], dim=-1)`
+
+### Machine Learning Model Operation Guide
+* <b>Parameter Configuration:</b>  Configure hyperparameters in the config.py file. The key parameters to set include the following.
 
 ## Citation
 Please cite the following paper if you use this code and dataset in your work.
