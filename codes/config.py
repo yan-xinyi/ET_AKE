@@ -19,13 +19,13 @@ feature = "no feature" #no feature/FFD/FN/TFD/FFD+FN/FN+TFD/FFD+TFD/FFD+FN+TFD
 
 
 
-# 训练参数:att-BiLSTM/att-BiLSTM-CRF 320
+# Training parameters for:att-BiLSTM/att-BiLSTM-CRF 320
 fs_num = 0
 embed_dim = 64     
 hidden_dim = 128    
 batch_size = 32    
 max_length = 512  
-#词量
+# Vocab parameters
 vocab_size = 1226   
 dropout_value = 0.5
 emb_dropout_value = 0.5
@@ -39,13 +39,13 @@ factor = 0.5
 patience = 3
 epochs = 100
 
-# # 训练参数:att-BiLSTM/att-BiLSTM-CRF  5190
+# # Training parameters for:att-BiLSTM/att-BiLSTM-CRF  5190
 # fs_num = 2
 # embed_dim = 64     
 # hidden_dim = 128    
 # batch_size = 32    
 # max_length = 512  
-# #词量
+# Vocab parameters
 # vocab_size = 2119   
 # dropout_value = 0.5
 # emb_dropout_value = 0.5
@@ -59,13 +59,13 @@ epochs = 100
 # patience = 3
 # epochs = 30
 
-# #训练参数:BiLSTM/BiLSTM-CRF 5190 
+# #Training parameters for:BiLSTM/BiLSTM-CRF 5190 
 # fs_num = 2
 # embed_dim = 64     
 # hidden_dim = 128    
 # batch_size = 32    
 # max_length = 512  
-# #词量
+# Vocab parameters
 # vocab_size = 2119   
 # dropout_value = 0.5
 # emb_dropout_value = 0.5
@@ -80,13 +80,13 @@ epochs = 100
 # epochs = 30
 
 
-# 训练参数：BiLSTM/BiLSTM-CRF-320
+# Training parameters for:BiLSTM/BiLSTM-CRF-320
 # fs_num =0
 # embed_dim = 64     
 # hidden_dim = 128    
 # batch_size = 32    
 # max_length = 512  
-# #词量
+# Vocab parameters
 # vocab_size = 1226   
 # dropout_value = 0.5
 # emb_dropout_value = 0.5
