@@ -1,4 +1,4 @@
-# Enhancing Keyword Extraction with Low-cost Eye-tracking Data
+![image](https://github.com/yan-xinyi/ET_AKE/assets/140530497/2d03044a-7300-45d8-b352-1619e0bc3bd1)# Enhancing Keyword Extraction with Low-cost Eye-tracking Data
 
 ## Overview
 <b>This is data and source Code for the paper "Enhancing Keyword Extraction with Low-cost Eye-tracking Data".</b>
@@ -51,7 +51,7 @@ We utilized the Flask framework to establish a platform for collecting user eye-
 The participants in the experiment consisted of 10 healthy students, native Chinese speakers, specializing in information management, and possessing a high level of academic literacy. Detailed information can be found in Table 1. In this context, "valid eye-tracking points" refers to the number of eye-tracking coordinates collected within the coordinate range of the reading materials. "Accuracy" denotes the participants' correctness in answering the test questions after reading.
 <div align=left>
 <b>Table 1: Detailed Information of the 10 Participants</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_3.png" width="80%" alt="Table 1: Table of details of 10 subjects"><br>
+  <img src="https://github.com/yan-xinyi/images/blob/main/ET_AKE/ET_AKE_3.png" width="80%" alt="Table 1: Table of details of 10 subjects"><br>
 </div>
 
 ### Acquisition of Eye-tracking Data 
@@ -60,7 +60,7 @@ The participants in the experiment consisted of 10 healthy students, native Chin
 <b>In order to enhance the efficiency of eye-tracking data collection and reduce the construction cost of eye-tracking datasets, this study employs the Search Gazer eye-tracking library, designed for collecting user browsing behavior, as the eye-tracking data collector.</b> It is embedded within the reading eye-tracking data collection platform, facilitating real-time acquisition of participants' eye gaze coordinates during the reading process. The Search Gazer eye-tracking library predicts the user's eye gaze position on the accessed page in real-time through the camera and further enhances the accuracy of mapping the features of the eyes in the camera image to the gaze position on the screen through a calibration process. The maximum frequency of gaze coordinate collection by the Search Gazer library is 60Hz, with a time interval of approximately 16.67ms between two collection points. In previous studies, fixations were defined as visual dwell periods ranging from 50ms to 1500ms, and the collection frequency of the Search Gazer library is sufficient to identify these fixation segments.
 
 <div align=left>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_2.png" width="80%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
+  <img src="https://github.com/yan-xinyi/images/blob/main/ET_AKE/ET_AKE_2.png" width="80%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
   <b>Note: </b> Explanation of the letter marks in the Image are as follows:<br>
   A: "User Eye Movement Data Reading Collection Platform";  B: Article number + Article title; C: User facial calibration interface; D: Reading main text, text in figure means "Title: Exploratory study on the path of scientific and technology intelligence development"; E: The small black text above indicates "current sentence number/total sentences in the abstract being read," and the two page-switching buttons below represent "previous page" and "next page."<br><br>
 </div>
@@ -77,7 +77,7 @@ To ensure the coherence of reading, each reading task is designated as a complet
 This study records eye movement features at the level of individual words, avoiding segmentation issues and providing a more nuanced analysis of reading processing. To retain valid gaze information as much as possible, the study, in conjunction with the frequency of the SearchGazer eye-tracking library, determined the effective gaze threshold to be between 16.7ms and 1500ms. In other words, the study retained information only when participants generated between 2 and 91 consecutive gaze points on a specific word. FFD (First Fixation Duration), FN (Fixation Count), and TFD (Total Fixation Duration) were selected as eye movement features, and Table 2 records the abbreviations and meanings of these eye-tracking measurement indicators.
 <div align=left>
 <b>Table 2: Definition of three eye-tracking measures</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_4.png" width="60%" alt="Table 2: Definition of three eye-tracking measures"><br>
+  <img src="https://github.com/yan-xinyi/images/blob/main/ET_AKE/ET_AKE_4.png" width="60%" alt="Table 2: Definition of three eye-tracking measures"><br>
 </div>
 
 
@@ -90,7 +90,7 @@ Eye-tracking Corpora is derived from 330 academic text abstracts published in th
 We selected academic papers from the same journals as the eye-tracking corpus, excluding those containing English characters and with abstract character counts exceeding 50. After removing the initial 320 articles from the eye-tracking corpus, we constructed the keyphrase extraction dataset, named Abstract5190, consisting of a total of 5,190 papers. For specific details about the dataset, please refer to Table 3, providing an overview of the keyphrase extraction test dataset.
 <div align=left>
 <b>Table 3: Overview of the keyphrase Extraction Test Dataset</b><br>
-  <img src="https://yan-xinyi.github.io/figures/ET_AKE_1.png" width="60%" alt="Table 3: Overview of the keyphrase Extraction Test Dataset"><br>
+  <img src="https://github.com/yan-xinyi/images/blob/main/ET_AKE/ET_AKE_1.png" width="60%" alt="Table 3: Overview of the keyphrase Extraction Test Dataset"><br>
   <b>Note: </b> The total character count includes both Chinese characters and punctuation marks. <br>The crucial characters encompass those that have appeared in the keyphrase sections.<br><br>
 </div>
 
