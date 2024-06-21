@@ -59,10 +59,14 @@ The participants in the experiment consisted of 10 healthy students, native Chin
   
 <b>In order to enhance the efficiency of eye-tracking data collection and reduce the construction cost of eye-tracking datasets, this study employs the Search Gazer eye-tracking library, designed for collecting user browsing behavior, as the eye-tracking data collector.</b> It is embedded within the reading eye-tracking data collection platform, facilitating real-time acquisition of participants' eye gaze coordinates during the reading process. The Search Gazer eye-tracking library predicts the user's eye gaze position on the accessed page in real-time through the camera and further enhances the accuracy of mapping the features of the eyes in the camera image to the gaze position on the screen through a calibration process. The maximum frequency of gaze coordinate collection by the Search Gazer library is 60Hz, with a time interval of approximately 16.67ms between two collection points. In previous studies, fixations were defined as visual dwell periods ranging from 50ms to 1500ms, and the collection frequency of the Search Gazer library is sufficient to identify these fixation segments.
 
-<div align=center>
-  <img src="https://github.com/yan-xinyi/images/blob/main/ET_AKE/ET_AKE_2.png" width="80%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
+<div align=left>
+  <img src="https://github.com/yan-xinyi/images/blob/main/ET_AKE/ET_AKE_2.png" width="100%" alt="Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface"><br>
   <b>Note: </b> Explanation of the letter marks in the Image are as follows:<br>
-  A: "User Eye Movement Data Reading Collection Platform";  B: Article number + Article title; C: User facial calibration interface; D: Reading main text, text in figure means "Title: Exploratory study on the path of scientific and technology intelligence development"; E: The small black text above indicates "current sentence number/total sentences in the abstract being read," and the two page-switching buttons below represent "previous page" and "next page."<br><br>
+  A: "User Eye Movement Data Reading Collection Platform";  
+  B: Article number + Article title; 
+  C: User facial calibration interface;
+  D: Reading main text, text in figure means "Title: Exploratory study on the path of scientific and technology intelligence development"; 
+  E: The small black text above indicates "current sentence number/total sentences in the abstract being read," and the two page-switching buttons below represent "previous page" and "next page."<br><br>
 </div>
   <b>Figure 1: Webgazer Script Based Chinese Academic Text Reading Interface.</b><br><br>
 
