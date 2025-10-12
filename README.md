@@ -36,7 +36,8 @@ In summary, this paper contributes in three main aspects:
      ├── macBERT.py                          # macBERT module
      ├── RoBERTa.py                          # RoBERTa module
      ├── config.py                           # Configuration module
-     └── evaluate.py                         # Evaluation module
+     ├── evaluate.py                         # Evaluation module
+     └── 5fold_crossing.py                   # Computing the P value of 5 fold crossing experiment of Abstract-320 dataset
 </pre>
 
 ##  Acquisition of Low-cost Eye-tracking Data
