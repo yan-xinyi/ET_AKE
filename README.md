@@ -138,4 +138,4 @@ To delve more deeply into the effectiveness of character-level eye-tracking feat
 ## Citation
 Please cite the following paper if you use this code and dataset in your work.
     
->Chengzhi Zhang, Xinyi Yan, Wenqi Yu. Enhancing Keyword Extraction with Low-cost Eye-tracking Data. 2023 (Working Paper）.
+>Chengzhi Zhang, Xinyi Yan, Wenqi Yu. Leveraging Human Reading Behavior for Keyphrase Extraction: A Cost-effective Eye-tracking Approach. Aslib Journal of Information Management, 2025 (under review）.
