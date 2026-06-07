@@ -35,10 +35,18 @@ In summary, this paper contributes in three main aspects:
      ├── BERT.py                             # BERT module
      ├── macBERT.py                          # macBERT module
      ├── RoBERTa.py                          # RoBERTa module
+   ├── T5Large.py                         # T5-Large/mT5-Large module for Chinese character-level AKE
      ├── config.py                           # Configuration module
      ├── evaluate.py                         # Evaluation module
      └── 5fold_crossing.py                   # Computing the P value of 5 fold crossing experiment of Abstract-320 dataset
 </pre>
+
+## T5-Large for Chinese AKE
+The repository now includes `codes/T5Large.py`, which adapts a T5-family model to character-level Chinese keyphrase extraction. Because the original T5 vocabulary is English-centric, the default checkpoint is `google/mt5-large`: it keeps the T5-Large encoder-decoder architecture while using a multilingual SentencePiece vocabulary that is better suited to Chinese text.
+
+The T5 implementation uses the encoder hidden states for BIOES token classification and aligns SentencePiece sub-tokens back to the original Chinese character labels with a fast tokenizer. Eye-tracking features can be configured through `t5_feature` in `codes/config.py` (`no feature`, `FFD`, `FN`, `TFD`, or their combinations). For a 15-epoch run on the small Abstract320 corpus, the default recommendation is `t5_lr = 1e-5`, `t5_weight_decay = 1e-2`, `t5_dropout_value = 0.1`, effective batch size 32 (`t5_batch_size = 2`, `t5_gradient_accumulation_steps = 16`), and early stopping on `F5` with patience 3. For the larger Abstract5190 corpus, `2e-5` can be tried if validation F-score is still improving.
+
+To run the T5-Large/mT5-Large experiment, uncomment the `T5Large(train_path, test_path, vocab_path)` call in `codes/main.py` and comment out the currently active baseline model call.
 
 ##  Acquisition of Low-cost Eye-tracking Data
 ### Eye-tracking reading corpus preparation
