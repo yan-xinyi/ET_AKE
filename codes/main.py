@@ -10,6 +10,7 @@ from attbilstm_crf import att_blcrf
 from BERT import BERT
 from macBERT import macBERT
 from RoBERTa import RoBERta
+from T5Large import T5Large
 
 if __name__ == '__main__':
 
@@ -44,6 +45,9 @@ if __name__ == '__main__':
 
        # macBERT
        # epoch3, epoch5, epoch10, best_P3, best_R3, best_F3, best_P5, best_R5, best_F5, best_P10, best_R10, best_F10 = macBERT(train_path, test_path, vocab_path)
+
+       # T5-Large/mT5-Large for Chinese character-level AKE
+       # epoch3, epoch5, epoch10, best_P3, best_R3, best_F3, best_P5, best_R5, best_F5, best_P10, best_R10, best_F10 = T5Large(train_path, test_path, vocab_path)
 
        # answerP.append(best_P)
        # answerR.append(best_R)
